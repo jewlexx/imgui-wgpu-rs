@@ -1,52 +1,52 @@
 [package]
-name = "imgui-wgpu"
-version = "0.25.0"
 authors = [
 	"Noah Hüsser <yatekii@yatekii.ch>",
 	"Connor Fitzgerald <connorwadefitzgerald@gmail.com>",
 	"Steven Wittens <steven@acko.net>",
 ]
-edition = "2021"
+categories = ["gui", "graphics", "rendering", "rendering::graphics-api"]
 description = "A wgpu render backend for imgui-rs."
 documentation = "https://docs.rs/imgui-wgpu/"
+edition = "2021"
 homepage = "https://github.com/Yatekii/imgui-wgpu-rs"
-repository = "https://github.com/Yatekii/imgui-wgpu-rs"
-readme = "README.md"
-categories = ["gui", "graphics", "rendering", "rendering::graphics-api"]
 keywords = ["gui", "graphics", "wgpu", "imgui"]
 license = "MIT OR Apache-2.0"
+name = "imgui-wgpu"
+readme = "README.md"
+repository = "https://github.com/Yatekii/imgui-wgpu-rs"
+version = "0.25.0"
 
 exclude = [".gitignore", ".github", "resources"]
 
 [[package.metadata.release.pre-release-replacements]]
 file = "CHANGELOG.md"
-search = "\\[Unreleased\\]\\(#unreleased\\)"
 replace = "[Unreleased](#unreleased)\n- [v{{version}}](#v{{version}})"
+search = "\\[Unreleased\\]\\(#unreleased\\)"
 [[package.metadata.release.pre-release-replacements]]
 file = "CHANGELOG.md"
-search = "\\[v([0-9]+)\\.([0-9]+)\\.([0-9]+)\\]\\(#v[0-9\\.]+\\)"
 replace = "[v$1.$2.$3](#v$1$2$3)"
+search = "\\[v([0-9]+)\\.([0-9]+)\\.([0-9]+)\\]\\(#v[0-9\\.]+\\)"
 [[package.metadata.release.pre-release-replacements]]
 file = "CHANGELOG.md"
-search = "## Unreleased"
 replace = "## Unreleased\n\n## v{{version}}\n\nReleased {{date}}"
+search = "## Unreleased"
 [[package.metadata.release.pre-release-replacements]]
 file = "CHANGELOG.md"
-search = "\\[Unreleased\\]\\(https://github.com/Yatekii/imgui-wgpu-rs/compare/v([a-z0-9.-]+)\\.\\.\\.HEAD\\)"
-replace = "[Unreleased](https://github.com/Yatekii/imgui-wgpu-rs/compare/v{{version}}...HEAD)\n- [v{{version}}](https://github.com/Yatekii/imgui-wgpu-rs/compare/v$1...v{{version}})"
 min = 0                                                                                                                                                                               # allow first increment
+replace = "[Unreleased](https://github.com/Yatekii/imgui-wgpu-rs/compare/v{{version}}...HEAD)\n- [v{{version}}](https://github.com/Yatekii/imgui-wgpu-rs/compare/v$1...v{{version}})"
+search = "\\[Unreleased\\]\\(https://github.com/Yatekii/imgui-wgpu-rs/compare/v([a-z0-9.-]+)\\.\\.\\.HEAD\\)"
 [[package.metadata.release.pre-release-replacements]]
 file = "CHANGELOG.md"
-search = "<!-- Begin Diffs -->"
-replace = "- [Unreleased](https://github.com/Yatekii/imgui-wgpu-rs/compare/v{{version}}...HEAD)"
 min = 0                                                                                          # allow non-first increment
+replace = "- [Unreleased](https://github.com/Yatekii/imgui-wgpu-rs/compare/v{{version}}...HEAD)"
+search = "<!-- Begin Diffs -->"
 
 [dependencies]
 bytemuck = "1"
 imgui = "0.12"
 log = "0.4"
 smallvec = "1"
-wgpu = "25.0.0"
+wgpu = { version = "27", default-features = false }
 
 [dev-dependencies]
 bytemuck = { version = "1.13", features = ["derive"] }
