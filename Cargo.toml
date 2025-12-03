@@ -14,7 +14,7 @@ license = "MIT OR Apache-2.0"
 name = "imgui-wgpu"
 readme = "README.md"
 repository = "https://github.com/Yatekii/imgui-wgpu-rs"
-version = "0.25.0"
+version = "0.27.0"
 
 exclude = [".gitignore", ".github", "resources"]
 
